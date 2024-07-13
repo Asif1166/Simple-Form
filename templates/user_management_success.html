@@ -1,31 +1,56 @@
-<!-- people/templates/people/person_success.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Success</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Verification</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body, html {
-            height: 100%;
-        }
-        .container {
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
+            height: 100vh;
+            background-color: #333;
+            margin: 0;
         }
-        .form-container {
-            width: 100%;
-            max-width: 500px; /* Adjust the max-width as needed */
+        .verification-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .btn-cancel {
+            background-color: #ccc;
+            border: none;
+            color: #000;
+        }
+        .btn-verify {
+            background-color: #ffc107;
+            border: none;
+            color: #000;
+        }
+        .form-control:focus {
+            border-color: #ffc107;
+            box-shadow: none;
         }
     </style>
 </head>
 <body>
-<div class="container mt-5">
-    <h2> Successfully You Are Loggedin!</h2>
-    <!-- <a href="{% url 'user_create_view' %}" class="btn btn-primary">Login Again</a> -->
-</div>
+    <div class="verification-container text-center">
+        <h4>Device Verification 1/2</h4>
+        <p>We have just sent a Verification Code to the email address provided</p>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter Code Here" required>
+        </div>
+        <p>No Code received yet? <a href="#" class="text-warning">Resend</a></p>
+        <p>Having trouble with receiving the Code? You can contact the <a href="#" class="text-warning">Support</a>.</p>
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-cancel mr-2">CANCEL</button>
+            <a href="/">
+            <button class="btn btn-verify">VERIFY</button>
+        </a>
+        </div>
+    </div>
 </body>
 </html>

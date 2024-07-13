@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +19,7 @@
             color: #fff;
             padding: 20px;
             border-radius: 10px;
+            text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
         .login-button {
@@ -33,19 +31,9 @@
 </head>
 <body>
     <div class="login-container">
-        <h3>Login</h3>
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="id_email">Email address</label>
-                {{ form.email }}
-            </div>
-            <div class="form-group">
-                <label for="id_password">Password</label>
-                {{ form.password }}
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Submit</button>
-        </form>
+        <h3>FaceTime</h3>
+        <p>Login with <strong>Erosads</strong> and enjoy <strong>Private Live Video Chat</strong> with your dating partner.</p>
+        <a href="/login"><button class="btn login-button">Login with Erosads</button></a>
         
     </div>
 </body>

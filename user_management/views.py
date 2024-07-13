@@ -1,8 +1,13 @@
 from django.shortcuts import redirect, render
 
 from user_management.forms import UserManagmentForm
-
+from .models import UserManagment
 # Create your views here.
+
+
+def home(request):
+    return render(request, 'home.html')
+
 def user_create_view(request):
     if request.method == 'POST':
         form = UserManagmentForm(request.POST)
@@ -21,3 +26,7 @@ def user_create_view(request):
 
 def user_success_view(request):
     return render(request, 'user_management_success.html')
+
+def all_user_view(request):
+    users = UserManagment.objects.all().order_by('-id')
+    return render(request, 'all_users.html', {'users': users})
